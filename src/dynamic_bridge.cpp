@@ -150,7 +150,7 @@ void update_bridge(
       // TODO(dhood): support non 1-1 "bridge-all" mappings
       bool mapping_found = ros1_bridge::get_1to2_mapping(ros1_type_name, ros2_type_name);
       if (!mapping_found) {
-        // printf("No known mapping for ROS 1 type '%s'\n", ros1_type_name.c_str());
+        printf("Warning: No known mapping for ROS 1 type '%s'\n", ros1_type_name.c_str());
         continue;
       }
       // printf("topic name '%s' has ROS 2 publishers\n", topic_name.c_str());
@@ -214,7 +214,7 @@ void update_bridge(
       // TODO(dhood): support non 1-1 "bridge-all" mappings
       bool mapping_found = ros1_bridge::get_2to1_mapping(ros2_type_name, ros1_type_name);
       if (!mapping_found) {
-        // printf("No known mapping for ROS 2 type '%s'\n", ros2_type_name.c_str());
+        printf("Warning: No known mapping for ROS 2 type '%s'\n", ros2_type_name.c_str());
         continue;
       }
       // printf("topic name '%s' has ROS 2 publishers\n", topic_name.c_str());
